@@ -1,0 +1,149 @@
+/* Basic Reset */
+@font-face {
+    font-family: Ghost;
+    src: url("../font/GhostEverywhere-5xrx.ttf");
+}
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Zen+Old+Mincho&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Zen Old Mincho", Ghost;
+}
+.nav-bar {
+    color: #f4f4f4;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+.nav-bar>a {
+    text-decoration: none;
+    color: #f4f4f4;
+}
+.logo{
+    margin-left: 2rem;
+    display: inline-block;
+    float: left;
+}
+ul {
+    float: right;
+    margin-right: 2rem;
+}
+ul li{
+    display: inline;
+}
+ul li a {
+    color: #f4f4f4;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.nav-bar::after{
+    clear: both;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #c51515;
+    transition-duration: 1s;
+    font-weight: bold;
+}
+
+.container-cover {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
+}
+
+.container-cover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/backgroudRE4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    background-color: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+}
+
+.left-section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-section img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.right-section {
+    position: relative;
+    width: 70%;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+
+
+.right-section .content {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+}
+
+.right-section h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #7c1919;
+}
+
+.right-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+footer {
+    background-color: rgba(128, 128, 128, 0.53);
+    box-shadow: #333333 2px 2px;
+    height: 10px;
+}
+
+footer>p {
+    color: #333;
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: right;
+    margin-right: 20px;
+}

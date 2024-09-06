@@ -1,0 +1,465 @@
+/* Default */
+@font-face {
+    font-family: Ghost;
+    src: url("../font/GhostEverywhere-5xrx.ttf");
+}
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Zen+Old+Mincho&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Zen Old Mincho",Ghost;
+    line-height: 1.6;
+}
+
+/* Header styles */
+/*HomeNavBar*/
+nav {
+    font-family: Ghost;
+    padding: 10px 0;
+}
+
+nav ul li a {
+    color: #710000;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 35px;
+}
+@media screen and (min-width: 720px) {
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+    .nav-bar {
+        position: absolute;
+        top: 80%;
+        right: 50%;
+        transform: translateX(50% );
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .nav-bar {
+        position: absolute;
+        top: 60%;
+        right: 50%;
+        transform: translateX(50% );
+    }
+    nav ul {
+        list-style: none;
+        display: block;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+    nav ul li a {
+        color: #710000;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    font-size:30px;
+    color: #c51515;
+    transition-duration: 1s;
+    font-weight: bold;
+}
+
+/*HomeLogo*/
+.evil-text-cover{
+    position: fixed;
+    z-index: 9999;
+}
+.evil-text {
+    max-width: 100%;
+    height: 300px;
+}
+.main-bg{
+    min-height: 100vh;
+    background-image: url("../images/backgroudRE4.png");
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* film Section */
+.leon-film {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.film ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+}
+
+.film ul li {
+    flex: 1;
+}
+
+.film figure {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.film img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    opacity: 70%;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.film img:hover {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+@media screen and (max-width: 720px) {
+    .film ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*explain*/
+.explain {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
+}
+
+.explain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/background2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.card-explain {
+    position: relative;
+    display: flex;
+    height: 70%;
+    width: 70%;
+    background-color: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.card-explain:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.card-explain img {
+    width: 50%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.card-content-explain {
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content-explain-title {
+    font-family: Ghost;
+    color: #7c1919;
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.card-content-explain p {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .card-explain {
+        margin: 0 2px;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .card-explain img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-content-explain {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .card-content-explain-title {
+        font-size: 1.5rem;
+    }
+
+    .card-content-explain p {
+        font-size: 1em;
+    }
+}
+
+
+
+/*3cards*/
+.card-parent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    z-index: 1;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+    z-index: 1;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-parent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/backgroudRE4.png");
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card-content h2 {
+    font-family: Ghost;
+    text-align: center;
+    color: #7c1919;
+    margin-top: 0;
+    font-weight: lighter;
+}
+
+.card-content p {
+    font-size: 0.9em;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.card-container a {
+    text-decoration: none;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .card-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-content p {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .card-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .card-content p {
+        font-size: 0.75em;
+    }
+
+    .card-parent {
+        padding: 10px;
+    }
+}
+
+
+
+/*map*/
+.map {
+    position: relative;
+    height: 100vh;
+}
+.map::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/background3.png");
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+
+.map-iframe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map-iframe>iframe {
+    border: 5px solid #f00;
+    box-shadow: 0px 0px 20px #000;
+    filter: grayscale(100%) contrast(150%);
+    width: 70%;
+    height: 500px;
+    margin-top: 20px;
+}
+
+.map-iframe:hover {
+    filter: grayscale(0%) contrast(100%);
+}
+
+.map-cover>h1 {
+    color: #7c1919;
+    text-shadow: 2px 2px 5px #000;
+    font-size: 3em;
+    font-family: Ghost;
+    text-align: center;
+}
+.map-cover>p {
+    font-size: 1.5em;
+    color: #ddd;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .map {
+        height: auto;
+    }
+
+    .map-iframe>iframe {
+        width: 90%;
+        height: 400px;
+    }
+
+    .map-cover h1 {
+        font-size: 2.5em;
+    }
+
+    .map-cover p {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .map-iframe>iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .map-cover h1 {
+        font-size: 2em;
+    }
+
+    .map-cover p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+}
+
+footer {
+    background-color: rgba(128, 128, 128, 0.53);
+    box-shadow: #333333 2px 2px;
+    height: 10px;
+}
+
+footer>p {
+    color: #f4f4f4;
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: right;
+    margin-right: 20px;
+}
+
+
